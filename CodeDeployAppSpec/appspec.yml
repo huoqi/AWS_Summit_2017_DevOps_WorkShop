@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+# files: 
+#   - source: deployFromS3.sh
+#     destination: /home/ec2-user/updateTomcat/
+#     overwrite: yes
+# permissions:
+#   - object: /home/ec2-user/updateTomcat/deployFromS3.sh
+#     patern: "*.sh"
+#     owner: root
+#     group: root
+#     mode: 774
+#     type:
+#       - file
+hooks:
+  BeforeInstall:
+    - location: deployFromS3.sh
+      timeout: 180
+      ruanas: root
